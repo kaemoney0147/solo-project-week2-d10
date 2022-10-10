@@ -31,6 +31,14 @@ console.log('exG:', me)
 console.log('\n......................JS Functions................')
 /* EXERCISE 1
 Write a function called dice; it should randomize an integer number between 1 and 6.*/
+function dice(n) {
+    let intNumber = 1;
+    for (let i = 0; i < n; i++) {
+        intNumber = (Math.floor(Math.random() * 7));
+    }
+    return intNumber;
+}
+console.log("Your numbers are: ", dice(6));
 /* EXERCISE 2
 Write a function called whoIsBigger which receives 2 numbers as parameters and returns the biggest one.*/
 function whoIsBigger(l1, l2) {
@@ -56,15 +64,18 @@ Write a function called deleteOne which receives a string and a boolean as param
 If the boolean value is true it should return the string without the first letter, otherwise it should remove the last one from it.
 
 */
-function deleteOne(m1, m2) {
-    if (m1 == m2) {
-        return m1
+function deleteOne(string, l2) {
+    if (l2 === l2) {
+        return string.slice(1)
     }
     else {
-        return m2
+
+        return string = string.slice(0, string.length - 1);
     }
 }
-console.log('Ex4:', deleteOne('leep', 'slee'))
+console.log('Ex4:', deleteOne('micky', 7))
+
+
 /* EXERCISE 5
 
 Write a function called onlyLetters which receives a string as a parameter and returns it removing all the digits.
@@ -72,9 +83,21 @@ Write a function called onlyLetters which receives a string as a parameter and r
 Ex.: onlyLetters("I have 4 dogs") => returns "I have dogs"
 
 */
-function onlyLetters(letters) {
-    letters = 'i have 4 girls';
-    return letters
+/* EXERCISE 6 Write a function called isThisAnEmail which receives a string as a parameter and returns true if the string is a valid email address.*/
+function isThisAnEmail(email) {
+    return /^\S+@\S+\.\S+$/.test(email);
 }
-const replace = letters.replace(/\d/g, "");
-console.log(replace)
+console.log('Ex6:', isThisAnEmail('kimade@gmail.com'))
+
+/* EXERCISE 7 Write a function called whatDayIsIt that should return the current day of the week.*/
+const weekDAY = ['monday', 'tuesday', 'Wednesday', 'Thursday', 'Sunday', 'Friday', 'Saturday']
+function whatDayIsIt(x) {
+    if ((x < 1) || (x > 7)) {
+
+    }
+    else {
+        let thisDay = weekDAY[x]
+        return thisDay;
+    }
+}
+console.log('Ex7:Today is', whatDayIsIt(3))
